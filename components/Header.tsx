@@ -9,13 +9,13 @@ export function Header() {
           <span className="brand-mark">GV</span>
           <span className="brand-copy">
             <strong>Gonçalo Vieira</strong>
-            <span>Software engineer / developer</span>
+            <span>Software developer</span>
           </span>
         </Link>
 
         <nav className="desktop-nav" aria-label="Primary navigation">
           <Link href="/#work">Work</Link>
-          <Link href="/#about">Approach</Link>
+          <Link href="/#about">About</Link>
           <Link href="/#stack">Stack</Link>
           <a
             className="nav-github"
@@ -23,7 +23,7 @@ export function Header() {
             target="_blank"
             rel="noreferrer"
           >
-            GitHub <ArrowIcon size={14} />
+            GitHub <ArrowIcon size={15} />
           </a>
         </nav>
       </div>

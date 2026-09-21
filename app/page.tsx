@@ -4,39 +4,44 @@ import { Reveal } from "@/components/Reveal";
 import { ArrowIcon } from "@/components/ArrowIcon";
 import { projects } from "@/lib/projects";
 
-const principles = [
+const focusAreas = [
   {
     number: "01",
-    title: "Start with the boundary",
-    text: "I first look for the places where a system can become unreliable: external data, state transitions, async work, browser side effects and API contracts.",
+    title: "Architecture before decoration",
+    text: "I like interfaces, but the system behind them matters more: data contracts, boundaries, failure modes and deployability.",
   },
   {
     number: "02",
-    title: "Prefer explicit systems",
-    text: "Queues, schemas, deterministic rules and failure states should be visible in the architecture — not hidden behind clever abstractions or a single AI call.",
+    title: "Predictability over cleverness",
+    text: "If deterministic application logic can solve a problem more reliably than an LLM or a complex abstraction, I prefer the deterministic path.",
   },
   {
     number: "03",
-    title: "Finish the product path",
-    text: "I like projects that cross the whole stack: interface, API, persistence, workers, automation, testing and the operational details needed to run them.",
+    title: "Build the complete flow",
+    text: "I am most interested in projects that cross layers — browser, API, database, background jobs, automation and infrastructure.",
+  },
+  {
+    number: "04",
+    title: "Keep the interface restrained",
+    text: "Good UI should make the product feel obvious. Motion and visual detail are there to support hierarchy, not to compete with it.",
   },
 ];
 
 const stackGroups = [
   {
-    label: "Product interfaces",
+    label: "Frontend",
     items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "HTML / CSS"],
   },
   {
-    label: "APIs & services",
-    items: ["FastAPI", "Python", "C# / .NET", "REST", "SQLAlchemy"],
+    label: "Backend",
+    items: ["FastAPI", "Python", "C# / .NET", "REST APIs", "SQLAlchemy"],
   },
   {
     label: "Data & async",
     items: ["PostgreSQL", "MongoDB", "Redis", "BullMQ", "Alembic"],
   },
   {
-    label: "Engineering tools",
+    label: "Tooling",
     items: ["Docker", "GitHub Actions", "Playwright", "Vitest / pytest", "Linux / WSL"],
   },
 ];
@@ -51,24 +56,20 @@ export default function Home() {
             <div className="hero-main">
               <div className="hero-kicker">
                 <span className="status-dot" />
-                Software engineering portfolio · 2026
+                Portfolio · 2026
               </div>
-
               <h1>
-                Building software
+                I build systems,
                 <br />
-                <span>that has to work.</span>
+                <span>not just screens.</span>
               </h1>
-
               <p className="hero-lede">
-                I&apos;m Gonçalo Vieira, a software developer from Portugal. I build full-stack
-                products across interfaces, APIs, data pipelines, browser automation and
-                AI-assisted workflows — with most of my attention on the system underneath.
+                I&apos;m Gonçalo, a software developer from Portugal focused on full-stack product
+                engineering, backend architecture, automation and AI-enabled workflows.
               </p>
-
               <div className="hero-actions">
                 <a className="button button-primary" href="#work">
-                  Explore selected work <ArrowIcon size={16} />
+                  Selected work <ArrowIcon size={17} />
                 </a>
                 <a
                   className="button button-secondary"
@@ -76,74 +77,63 @@ export default function Home() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  GitHub <ArrowIcon size={16} />
+                  GitHub profile <ArrowIcon size={17} />
                 </a>
               </div>
             </div>
 
-            <aside className="hero-aside" aria-label="Engineering profile">
+            <aside className="hero-aside" aria-label="Profile overview">
               <div className="aside-head">
-                <span>Engineering snapshot</span>
+                <span>Profile</span>
                 <span>PT / 2026</span>
               </div>
-
-              <div className="profile-statement">
-                <span>Focus</span>
-                <strong>Full-stack product engineering with a backend and systems bias.</strong>
-              </div>
-
               <div className="profile-grid">
                 <div>
-                  <span className="profile-label">Primary stack</span>
-                  <strong>Next.js · FastAPI · .NET</strong>
-                </div>
-                <div>
-                  <span className="profile-label">Systems</span>
-                  <strong>PostgreSQL · MongoDB · Redis · Docker</strong>
-                </div>
-                <div>
-                  <span className="profile-label">Current direction</span>
-                  <strong>Product engineering · DevOps · applied AI</strong>
+                  <span className="profile-label">Focus</span>
+                  <strong>Full-stack systems</strong>
                 </div>
                 <div>
                   <span className="profile-label">Education</span>
                   <strong>Web Programming · ETIC Algarve</strong>
                 </div>
-              </div>
-
-              <div className="profile-footer">
-                <span className="profile-monogram">GV</span>
                 <div>
-                  <span className="profile-small">Selected systems</span>
-                  <strong>{String(projects.length).padStart(2, "0")}</strong>
+                  <span className="profile-label">Working with</span>
+                  <strong>Next.js · FastAPI · .NET · Docker</strong>
                 </div>
+                <div>
+                  <span className="profile-label">Interested in</span>
+                  <strong>Product engineering · DevOps · AI systems</strong>
+                </div>
+              </div>
+              <div className="profile-signature">
+                <span>GV</span>
+                <p>Engineering projects from UI to infrastructure.</p>
               </div>
             </aside>
           </div>
 
           <div className="hero-footnote">
-            <span>Frontend → API → data → infrastructure</span>
+            <span>Scroll to selected work</span>
             <span className="hero-line" />
-            <span>Scroll to work</span>
+            <span>Five case studies</span>
           </div>
         </section>
 
         <section className="work-section shell" id="work">
           <Reveal>
-            <div className="section-heading section-heading-work">
+            <div className="section-heading">
               <div>
-                <span className="section-index">01 / Selected engineering work</span>
-                <h2>Proof through systems, not skill bars.</h2>
+                <span className="section-index">01 / Selected work</span>
+                <h2>Projects with real systems behind them.</h2>
               </div>
               <p>
-                These are the projects I would want someone reviewing my work to open first. Each
-                case study shows the architecture, the trade-offs and the decisions that made the
-                implementation more reliable.
+                Each case study focuses on engineering decisions: how data moves, where state lives,
+                how failures are contained and why the architecture looks the way it does.
               </p>
             </div>
           </Reveal>
 
-          <div className="project-list">
+          <div className="project-grid">
             {projects.map((project) => (
               <Reveal key={project.slug}>
                 <ProjectCard project={project} />
@@ -157,18 +147,18 @@ export default function Home() {
             <Reveal>
               <div className="section-heading light-heading">
                 <div>
-                  <span className="section-index">02 / How I think</span>
-                  <h2>Engineering choices before visual noise.</h2>
+                  <span className="section-index">02 / Approach</span>
+                  <h2>The way I like to build.</h2>
                 </div>
                 <p>
-                  I care about the UI, but the strongest projects usually become interesting where
-                  the UI stops: data quality, state, concurrency, safety and deployment.
+                  My projects tend to start with a product idea and end up crossing multiple layers.
+                  That is where I learn the most.
                 </p>
               </div>
             </Reveal>
 
             <div className="principles-grid">
-              {principles.map((area) => (
+              {focusAreas.map((area) => (
                 <Reveal key={area.number}>
                   <article className="principle-card">
                     <span>{area.number}</span>
@@ -185,12 +175,12 @@ export default function Home() {
           <Reveal>
             <div className="section-heading">
               <div>
-                <span className="section-index">03 / Working stack</span>
-                <h2>Tools connected to shipped work.</h2>
+                <span className="section-index">03 / Stack</span>
+                <h2>Tools I have used to ship projects.</h2>
               </div>
               <p>
-                No logo wall and no self-rated percentages. These are technologies that appear in
-                the projects above and that I have used as part of complete application flows.
+                The list is intentionally practical: technologies that appear in the work above,
+                not a wall of logos collected for a skills section.
               </p>
             </div>
           </Reveal>
@@ -219,15 +209,15 @@ export default function Home() {
                 <p className="education-overline">ETIC Algarve</p>
                 <h2>Web Programming</h2>
                 <p>
-                  A practical route through frontend, backend, databases, containerization and
-                  project delivery, culminating in Decozy as the final project.
+                  A hands-on path through frontend, backend, databases, containerization and project
+                  delivery — ending with Decozy as the final project.
                 </p>
               </div>
               <div className="education-side">
-                <span>Final project</span>
+                <span>Selected final project</span>
                 <strong>Decozy</strong>
                 <a href="/projects/decozy">
-                  Open case study <ArrowIcon size={16} />
+                  Read case study <ArrowIcon size={16} />
                 </a>
               </div>
             </div>
@@ -238,16 +228,16 @@ export default function Home() {
           <div className="shell contact-grid">
             <Reveal>
               <div>
-                <span className="section-index">05 / Continue</span>
-                <h2>Code is the next layer of the portfolio.</h2>
+                <span className="section-index">05 / Next</span>
+                <h2>Looking for the next hard problem.</h2>
               </div>
             </Reveal>
             <Reveal>
               <div className="contact-copy">
                 <p>
-                  Public repositories are linked directly from their case studies. Private projects
-                  are documented without exposing their source. The portfolio is intentionally
-                  concise: enough context to understand the engineering, then a path into the work.
+                  This portfolio is built for university applications and early-career software
+                  opportunities. Public code is linked where available; private project code can be
+                  discussed when appropriate.
                 </p>
                 <a
                   className="text-link"
@@ -266,7 +256,7 @@ export default function Home() {
       <footer className="footer shell">
         <span>Gonçalo Vieira</span>
         <span>Software Developer · Portugal</span>
-        <span>Next.js · 2026</span>
+        <span>Built with Next.js</span>
       </footer>
     </>
   );

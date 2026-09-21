@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Gonçalo Vieira — Software Developer",
   description:
     "Portfolio of Gonçalo Vieira — full-stack systems, backend architecture, automation and product engineering.",
+  metadataBase: new URL("https://example.com"),
   openGraph: {
     title: "Gonçalo Vieira — Software Developer",
     description:
