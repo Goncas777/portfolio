@@ -18,7 +18,7 @@ const focusAreas = [
   {
     number: "03",
     title: "Build the complete flow",
-    text: "I am most interested in projects that cross layers — browser, API, database, background jobs, automation and infrastructure.",
+    text: "I am most interested in projects that cross layers browser, API, database, background jobs, automation and infrastructure.",
   },
   {
     number: "04",
